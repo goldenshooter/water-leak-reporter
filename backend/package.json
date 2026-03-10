@@ -1,0 +1,31 @@
+{
+  "name": "water-leak-reporter-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Azure Functions backend for Water Leak Reporter",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "start": "npm run build && func start",
+    "start:secure": "npm run build && dotenv -e .env.local -- func start",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@azure/functions": "4.5.0",
+    "@azure/service-bus": "7.9.5",
+    "nodemailer": "6.9.14"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/nodemailer": "6.4.15",
+    "dotenv-cli": "7.4.2",
+    "typescript": "5.5.3",
+    "vitest": "2.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

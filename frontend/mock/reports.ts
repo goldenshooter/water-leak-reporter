@@ -1,0 +1,47 @@
+import { WaterLeakReport } from '@/types/report';
+
+export const mockReports: WaterLeakReport[] = [
+  {
+    id: 'WL-1001',
+    reporterName: 'Hana Tui',
+    email: 'hana.tui@example.com',
+    phone: '021-128-3388',
+    location: '128 Kauri Street, Central District',
+    leakType: 'street leak',
+    severity: 'high',
+    description: 'Water bubbling through asphalt, spreading across two lanes.',
+    status: 'open',
+    createdAt: '2026-03-08T07:15:00.000Z',
+  },
+  {
+    id: 'WL-1002',
+    reporterName: 'Liam Rivers',
+    location: 'Behind 44 Green Lane, near bus stop',
+    leakType: 'meter leak',
+    severity: 'medium',
+    description: 'Steady drip from meter box for the last day.',
+    status: 'in progress',
+    createdAt: '2026-03-07T22:40:00.000Z',
+  },
+  {
+    id: 'WL-1003',
+    reporterName: 'M. Patel',
+    email: 'mpatel@example.com',
+    location: 'Corner of Carlton Ave and Ridge Road',
+    severity: 'high',
+    leakType: 'burst pipe',
+    description: 'Fast spray and reduced neighborhood pressure reported.',
+    status: 'open',
+    createdAt: '2026-03-06T16:03:00.000Z',
+  },
+  {
+    id: 'WL-1004',
+    reporterName: 'Avery Cook',
+    location: '9 Shoreline Court driveway',
+    severity: 'low',
+    leakType: 'unknown',
+    description: 'Small damp patch that grows overnight.',
+    status: 'resolved',
+    createdAt: '2026-03-05T03:28:00.000Z',
+  },
+];
