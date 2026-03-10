@@ -38,19 +38,12 @@ export class SmtpEmailClient implements EmailClient {
       `Event Type: ${event.eventType}`,
     ].join('\n');
 
-    console.log("About to send SMTP email", {
-      from: this.from,
-      to: this.to,
-      subject,
-    });
-
     await this.transporter.sendMail({
       from: this.from,
       to: this.to,
       subject,
       text,
     });
-    console.log("SMTP email sent");
   }
 }
 
@@ -70,8 +63,6 @@ export function createEmailClientFromEnv(): EmailClient {
   if (Number.isNaN(parsedPort)) {
     return new NoopEmailClient();
   }
-
-  console.log("Using SmtpEmailClient", {host, port, user, from, to});
 
   const transporter = nodemailer.createTransport({
     host,
